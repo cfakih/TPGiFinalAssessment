@@ -13,6 +13,10 @@
             box-sizing: border-box;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
@@ -24,6 +28,90 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* Navigation Styles */
+        .floating-nav {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid #e6e4ff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(89, 81, 255, 0.15);
+            z-index: 1000;
+            width: 240px;
+            max-height: 70vh;
+            overflow-y: auto;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .floating-nav:hover {
+            opacity: 1;
+            transform: translateY(-50%) translateX(5px);
+            box-shadow: 0 12px 40px rgba(89, 81, 255, 0.25);
+        }
+
+        .floating-nav h3 {
+            color: #120044;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #5951ff;
+            padding-bottom: 8px;
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-bottom: 8px;
+        }
+
+        .nav-links a {
+            display: block;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border-left: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #5951ff;
+            background: rgba(89, 81, 255, 0.05);
+            border-left-color: #5951ff;
+            transform: translateX(3px);
+        }
+
+        .nav-links a.active {
+            color: #5951ff;
+            background: rgba(89, 81, 255, 0.1);
+            border-left-color: #5951ff;
+            font-weight: 500;
+        }
+
+        /* Hide navigation on mobile/tablet */
+        @media (max-width: 1024px) {
+            .floating-nav {
+                display: none;
+            }
+        }
+
+        /* Adjust main content margin to account for navigation */
+        @media (min-width: 1025px) {
+            .main-content {
+                margin-left: 280px;
+            }
         }
         
         .header {
@@ -336,413 +424,483 @@
     </style>
 </head>
 <body>
-    <div class="header">
+    <!-- Floating Navigation -->
+    <nav class="floating-nav">
+        <h3>Navigate</h3>
+        <ul class="nav-links">
+            <li><a href="#executive-summary">Executive Summary</a></li>
+            <li><a href="#current-state">Current State Analysis</a></li>
+            <li><a href="#workflow-analysis">Process Workflow Analysis</a></li>
+            <li><a href="#impact-analysis">Impact Analysis</a></li>
+            <li><a href="#target-state">Target State Operations</a></li>
+            <li><a href="#solution-mapping">Solution Mapping</a></li>
+            <li><a href="#team-quotes">Team Insights</a></li>
+            <li><a href="#financial-analysis">Financial Analysis</a></li>
+            <li><a href="#implementation">Implementation Framework</a></li>
+            <li><a href="#stakeholder-alignment">Stakeholder Alignment</a></li>
+            <li><a href="#supporting-materials">Supporting Materials</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <div class="container">
+                <h1>Strategic Implementation Assessment</h1>
+                <p>TPGi Sales Operations Evaluation</p>
+            </div>
+        </div>
+
         <div class="container">
-            <h1>Strategic Implementation Assessment</h1>
-            <p>TPGi Sales Operations Evaluation</p>
-        </div>
-    </div>
+            <section id="executive-summary" class="section">
+                <div class="executive-summary">
+                    <h2>Executive Summary</h2>
+                    <p> style="margin-bottom: 20px;"TPGi's planned migration from HubSpot to Salesforce creates a critical opportunity to enhance sales operations beyond current capabilities. While extending HubSpot contracts provides short-term continuity, the evaluation revealed significant operational constraints limiting growth potential across sequence management, task execution, coaching visibility, and conversation intelligence.</p>
+                    
+                    <p> style="margin-bottom: 20px;"The recommended Outreach implementation would consolidate multiple point solutions into a unified platform, delivering enterprise-grade automation, advanced reporting capabilities, and conversation intelligence that transforms how the organization manages its 20-30 concurrent sales initiatives and supports its accessibility-focused mission.</p>
+                    
+                    <p> style="margin-bottom: 20px;"<strong>Investment Framework:</strong> Platform licensing scales from $120-$230 per user monthly, with 3-4 week implementation including custom training, workflow consulting, and Salesforce integration (backed by Salesforce's strategic investment in Outreach).</p>
+                    
+                    <p><strong>Risk Mitigation:</strong> Outreach's enterprise-grade Salesforce integration and accessibility considerations provide a more scalable foundation than current HubSpot limitations, supporting TPGi's unique requirements serving the low-vision community.</p>
+                </div>
+            </section>
 
-    <div class="container">
-        <div class="section">
-            <div class="executive-summary">
-                <h2>Executive Summary</h2>
-                <p>TPGi's planned migration from HubSpot to Salesforce creates a critical opportunity to enhance sales operations beyond current capabilities. While extending HubSpot contracts provides short-term continuity, the evaluation revealed significant operational constraints limiting growth potential across sequence management, task execution, coaching visibility, and conversation intelligence.</p>
-                
-                <p>The recommended Outreach implementation would consolidate multiple point solutions into a unified platform, delivering enterprise-grade automation, advanced reporting capabilities, and conversation intelligence that transforms how the organization manages its 20-30 concurrent sales initiatives and supports its accessibility-focused mission.</p>
-                
-                <p><strong>Investment Framework:</strong> Platform licensing scales from $120-$230 per user monthly, with 3-4 week implementation including custom training, workflow consulting, and Salesforce integration (backed by Salesforce's strategic investment in Outreach).</p>
-                
-                <p><strong>Risk Mitigation:</strong> Outreach's enterprise-grade Salesforce integration and accessibility considerations provide a more scalable foundation than current HubSpot limitations, supporting TPGi's unique requirements serving the low-vision community.</p>
-            </div>
-        </div>
+            <section id="current-state" class="section section-alt">
+                <h2>Current State Analysis</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operational Area</th>
+                            <th>Current Challenge</th>
+                            <th>Business Impact</th>
+                            <th>Stakeholder Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Sequence Management</strong></td>
+                            <td>Cannot A/B test with dynamic sequences in HubSpot</td>
+                            <td>Limited content optimization, reduced conversion rates</td>
+                            <td>Kari's team lacks data-driven messaging insights</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Task Execution</strong></td>
+                            <td>200-400 daily tasks per SDR with manual prioritization</td>
+                            <td>Productivity constraints limiting campaign effectiveness</td>
+                            <td>SDR team overwhelmed during high-volume periods</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Workflow Automation</strong></td>
+                            <td>Limited CRM connectivity and trigger capabilities</td>
+                            <td>Manual processes reduce scalability across 20-30 initiatives</td>
+                            <td>Operations team managing workarounds instead of strategy</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Coaching Visibility</strong></td>
+                            <td>Fireflies recordings not systematically leveraged</td>
+                            <td>Missed coaching opportunities and inconsistent messaging</td>
+                            <td>Management lacks visibility into rep performance drivers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Conversation Intelligence</strong></td>
+                            <td>Separate Gong evaluation creates tool sprawl</td>
+                            <td>Disconnected insights limit deal progression visibility</td>
+                            <td>Leadership evaluating multiple vendors instead of unified solution</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AE Prospecting</strong></td>
+                            <td>AEs rely on SDRs due to deliverability concerns</td>
+                            <td>Reduced prospecting capacity and longer sales cycles</td>
+                            <td>AE team underutilized in pipeline generation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
 
-        <div class="section section-alt">
-            <h2>Current State Analysis</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Operational Area</th>
-                        <th>Current Challenge</th>
-                        <th>Business Impact</th>
-                        <th>Stakeholder Impact</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Sequence Management</strong></td>
-                        <td>Cannot A/B test with dynamic sequences in HubSpot</td>
-                        <td>Limited content optimization, reduced conversion rates</td>
-                        <td>Kari's team lacks data-driven messaging insights</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Task Execution</strong></td>
-                        <td>200-400 daily tasks per SDR with manual prioritization</td>
-                        <td>Productivity constraints limiting campaign effectiveness</td>
-                        <td>SDR team overwhelmed during high-volume periods</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Workflow Automation</strong></td>
-                        <td>Limited CRM connectivity and trigger capabilities</td>
-                        <td>Manual processes reduce scalability across 20-30 initiatives</td>
-                        <td>Operations team managing workarounds instead of strategy</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Coaching Visibility</strong></td>
-                        <td>Fireflies recordings not systematically leveraged</td>
-                        <td>Missed coaching opportunities and inconsistent messaging</td>
-                        <td>Management lacks visibility into rep performance drivers</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Conversation Intelligence</strong></td>
-                        <td>Separate Gong evaluation creates tool sprawl</td>
-                        <td>Disconnected insights limit deal progression visibility</td>
-                        <td>Leadership evaluating multiple vendors instead of unified solution</td>
-                    </tr>
-                    <tr>
-                        <td><strong>AE Prospecting</strong></td>
-                        <td>AEs rely on SDRs due to deliverability concerns</td>
-                        <td>Reduced prospecting capacity and longer sales cycles</td>
-                        <td>AE team underutilized in pipeline generation</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            <section id="workflow-analysis" class="section">
+                <h2>Process Workflow Analysis</h2>
+                
+                <div class="workflow-grid">
+                    <div class="workflow-card">
+                        <h4>Sequence Management & Content Optimization</h4>
+                        <p><strong>Current Process:</strong> HubSpot forces choice between A/B testing OR dynamic sequences, limiting optimization capabilities. Content marketer cannot test messaging variations while maintaining engagement-based automation.</p>
+                        <p><strong>Impact:</strong> Reduced conversion rates, suboptimal messaging, limited data-driven decision making across 20-30 concurrent initiatives.</p>
+                        <p><strong>Resource Cost:</strong> Marketing team creates content without performance feedback, SDR team executes sequences without optimization insights.</p>
+                    </div>
+                    
+                    <div class="workflow-card">
+                        <h4>Daily Task Execution & Prioritization</h4>
+                        <p><strong>Current Process:</strong> SDRs manually filter and prioritize 200-400 daily tasks across multiple sequences and campaigns. Limited automation for task scheduling and routing.</p>
+                        <p><strong>Impact:</strong> Productivity bottlenecks during high-volume periods, inconsistent follow-up timing, manual rescheduling of overdue tasks.</p>
+                        <p><strong>Resource Cost:</strong> 30-45 minutes daily per SDR on task management instead of prospect engagement.</p>
+                    </div>
+                    
+                    <div class="workflow-card">
+                        <h4>CRM Integration & Workflow Automation</h4>
+                        <p><strong>Current Process:</strong> HubSpot provides basic automation with limited Salesforce connectivity. Complex triggers require manual configuration and monitoring.</p>
+                        <p><strong>Impact:</strong> Reduced automation capabilities, manual data management, limited trigger sophistication for complex sales motions.</p>
+                        <p><strong>Resource Cost:</strong> Operations team manages workarounds instead of focusing on strategic initiatives.</p>
+                    </div>
+                    
+                    <div class="workflow-card">
+                        <h4>Coaching & Performance Management</h4>
+                        <p><strong>Current Process:</strong> Fireflies records calls but systematic coaching processes not implemented. Limited visibility into rep performance drivers and messaging effectiveness.</p>
+                        <p><strong>Impact:</strong> Inconsistent messaging, missed coaching opportunities, difficulty scaling best practices across team.</p>
+                        <p><strong>Resource Cost:</strong> Management time spent on reactive coaching instead of proactive performance optimization.</p>
+                    </div>
+                    
+                    <div class="workflow-card">
+                        <h4>Conversation Intelligence & Deal Insights</h4>
+                        <p><strong>Current Process:</strong> Separate Gong evaluation creates tool sprawl. Call insights disconnected from sequence performance and deal progression data.</p>
+                        <p><strong>Impact:</strong> Fragmented insights, additional vendor management, disconnected performance data across sales activities.</p>
+                        <p><strong>Resource Cost:</strong> Leadership evaluating multiple solutions instead of unified platform approach.</p>
+                    </div>
+                    
+                    <div class="workflow-card">
+                        <h4>Advanced Reporting & Analytics</h4>
+                        <p><strong>Current Process:</strong> Limited reporting granularity in HubSpot. Cannot differentiate positive vs negative email replies or compare sequence performance effectively.</p>
+                        <p><strong>Impact:</strong> Reduced visibility into campaign effectiveness, limited data-driven optimization opportunities.</p>
+                        <p><strong>Resource Cost:</strong> Manual reporting and analysis instead of automated insights and recommendations.</p>
+                    </div>
+                </div>
+            </section>
 
-        <div class="section">
-            <h2>Process Workflow Analysis</h2>
-            
-            <div class="workflow-grid">
-                <div class="workflow-card">
-                    <h4>Sequence Management & Content Optimization</h4>
-                    <p><strong>Current Process:</strong> HubSpot forces choice between A/B testing OR dynamic sequences, limiting optimization capabilities. Content marketer cannot test messaging variations while maintaining engagement-based automation.</p>
-                    <p><strong>Impact:</strong> Reduced conversion rates, suboptimal messaging, limited data-driven decision making across 20-30 concurrent initiatives.</p>
-                    <p><strong>Resource Cost:</strong> Marketing team creates content without performance feedback, SDR team executes sequences without optimization insights.</p>
+            <section id="impact-analysis" class="section section-alt">
+                <h2>Impact Analysis: Cost of Inaction</h2>
+                
+                <div class="impact-grid">
+                    <div class="impact-card current-state">
+                        <h3>Productivity Limitations</h3>
+                        <ul>
+                            <li>SDR team managing 200-400 daily tasks with manual prioritization</li>
+                            <li>30-45 minutes daily per rep on administrative task management</li>
+                            <li>AE team underutilized in prospecting due to deliverability concerns</li>
+                            <li>Content optimization limited by either/or choice between A/B testing and automation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="impact-card target-state">
+                        <h3>Scalability Constraints</h3>
+                        <ul>
+                            <li>Current platform limits automation sophistication for 20-30 concurrent initiatives</li>
+                            <li>Manual workarounds prevent operations team from strategic focus</li>
+                            <li>Tool sprawl evaluation increases complexity and vendor management overhead</li>
+                            <li>Limited reporting granularity reduces data-driven decision making</li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div class="workflow-card">
-                    <h4>Daily Task Execution & Prioritization</h4>
-                    <p><strong>Current Process:</strong> SDRs manually filter and prioritize 200-400 daily tasks across multiple sequences and campaigns. Limited automation for task scheduling and routing.</p>
-                    <p><strong>Impact:</strong> Productivity bottlenecks during high-volume periods, inconsistent follow-up timing, manual rescheduling of overdue tasks.</p>
-                    <p><strong>Resource Cost:</strong> 30-45 minutes daily per SDR on task management instead of prospect engagement.</p>
+                <div class="metric-card">
+                    <div class="metric-number">25%</div>
+                    <div class="metric-label">Estimated productivity gain from automated task prioritization and workflow optimization</div>
                 </div>
-                
-                <div class="workflow-card">
-                    <h4>CRM Integration & Workflow Automation</h4>
-                    <p><strong>Current Process:</strong> HubSpot provides basic automation with limited Salesforce connectivity. Complex triggers require manual configuration and monitoring.</p>
-                    <p><strong>Impact:</strong> Reduced automation capabilities, manual data management, limited trigger sophistication for complex sales motions.</p>
-                    <p><strong>Resource Cost:</strong> Operations team manages workarounds instead of focusing on strategic initiatives.</p>
-                </div>
-                
-                <div class="workflow-card">
-                    <h4>Coaching & Performance Management</h4>
-                    <p><strong>Current Process:</strong> Fireflies records calls but systematic coaching processes not implemented. Limited visibility into rep performance drivers and messaging effectiveness.</p>
-                    <p><strong>Impact:</strong> Inconsistent messaging, missed coaching opportunities, difficulty scaling best practices across team.</p>
-                    <p><strong>Resource Cost:</strong> Management time spent on reactive coaching instead of proactive performance optimization.</p>
-                </div>
-                
-                <div class="workflow-card">
-                    <h4>Conversation Intelligence & Deal Insights</h4>
-                    <p><strong>Current Process:</strong> Separate Gong evaluation creates tool sprawl. Call insights disconnected from sequence performance and deal progression data.</p>
-                    <p><strong>Impact:</strong> Fragmented insights, additional vendor management, disconnected performance data across sales activities.</p>
-                    <p><strong>Resource Cost:</strong> Leadership evaluating multiple solutions instead of unified platform approach.</p>
-                </div>
-                
-                <div class="workflow-card">
-                    <h4>Advanced Reporting & Analytics</h4>
-                    <p><strong>Current Process:</strong> Limited reporting granularity in HubSpot. Cannot differentiate positive vs negative email replies or compare sequence performance effectively.</p>
-                    <p><strong>Impact:</strong> Reduced visibility into campaign effectiveness, limited data-driven optimization opportunities.</p>
-                    <p><strong>Resource Cost:</strong> Manual reporting and analysis instead of automated insights and recommendations.</p>
-                </div>
-            </div>
-        </div>
+            </section>
 
-        <div class="section section-alt">
-            <h2>Impact Analysis: Cost of Inaction</h2>
-            
-            <div class="impact-grid">
-                <div class="impact-card current-state">
-                    <h3>Productivity Limitations</h3>
+            <section id="target-state" class="section">
+                <h2>Target State: Outreach-Enabled Operations</h2>
+                
+                <h3>Transformed Workflows</h3>
+                
+                <div class="workflow-grid">
+                    <div class="workflow-card">
+                        <h4>Enhanced Sequence Management</h4>
+                        <p><strong>Outreach Solution:</strong> A/B testing WITH dynamic sequences enables content optimization while maintaining engagement-based automation.</p>
+                        <p><strong>Expected Outcome:</strong> 15-25% improvement in sequence conversion rates through systematic message testing and optimization.</p>
+                    </div>
+                    
+                    <div class="workflow-card">
+                        <h4>Intelligent Task Execution</h4>
+                        <p><strong>Outreach Solution:</strong> Smart prioritization, automated routing, and bulk task management across multiple campaigns and sequences.</p>
+                        <p><strong>Expected Outcome:</strong> Reduce daily administrative time by 30-45 minutes per SDR, increase prospect engagement capacity.</p>
+                    </div>
+                    
+                    <div class="workflow-card">
+                        <h4>Advanced Workflow Automation</h4>
+                        <p><strong>Outreach Solution:</strong> Enterprise-grade Salesforce integration with complex triggers and branching logic, backed by Salesforce's strategic investment.</p>
+                        <p><strong>Expected Outcome:</strong> Sophisticated automation supporting 20-30 initiatives with minimal manual oversight.</p>
+                    </div>
+                    
+                    <div class="workflow-card">
+                        <h4>Systematic Coaching & Analytics</h4>
+                        <p><strong>Outreach Solution:</strong> Integrated conversation intelligence with coaching workflows, performance tracking, and message effectiveness analysis.</p>
+                        <p><strong>Expected Outcome:</strong> Consistent coaching processes, improved rep performance, scalable best practice implementation.</p>
+                    </div>
+                </div>
+                
+                <h3>Core Platform Capabilities</h3>
+                
+                <div class="card">
+                    <h4>Engagement Platform (Foundation)</h4>
+                    <p>Multi-channel sequences, CRM synchronization, integrated dialer, email automation, advanced reporting, and governance controls. Essential foundation for replacing HubSpot capabilities with enterprise-grade functionality.</p>
+                </div>
+                
+                <div class="card">
+                    <h4>Conversation Intelligence</h4>
+                    <p>Real-time transcription, coaching workflows, sentiment analysis, topic tracking, and performance analytics. Consolidates separate Gong evaluation into unified platform approach.</p>
+                </div>
+                
+                <div class="card">
+                    <h4>Advanced Analytics & Reporting</h4>
+                    <p>Email sentiment analysis, sequence comparison, clickable reporting with drill-down capabilities, revenue attribution, and performance optimization recommendations.</p>
+                </div>
+            </section>
+
+            <section id="solution-mapping" class="section section-alt">
+                <h2>Solution Mapping</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Business Challenge</th>
+                            <th>Current Impact</th>
+                            <th>Outreach Solution</th>
+                            <th>Expected Outcome</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cannot A/B test with dynamic sequences</td>
+                            <td>Limited content optimization</td>
+                            <td>A/B testing WITH dynamic functionality</td>
+                            <td>15-25% improvement in conversion rates</td>
+                        </tr>
+                        <tr>
+                            <td>Manual task prioritization across 200-400 daily tasks</td>
+                            <td>30-45 minutes daily administrative overhead</td>
+                            <td>Intelligent task routing and bulk management</td>
+                            <td>Increased prospect engagement capacity</td>
+                        </tr>
+                        <tr>
+                            <td>Limited CRM connectivity and automation</td>
+                            <td>Manual processes for complex sales motions</td>
+                            <td>Enterprise Salesforce integration with advanced triggers</td>
+                            <td>Sophisticated automation with minimal oversight</td>
+                        </tr>
+                        <tr>
+                            <td>Fireflies recordings not systematically leveraged</td>
+                            <td>Missed coaching opportunities</td>
+                            <td>Integrated conversation intelligence and coaching workflows</td>
+                            <td>Consistent performance optimization</td>
+                        </tr>
+                        <tr>
+                            <td>Tool sprawl from separate Gong evaluation</td>
+                            <td>Disconnected insights and vendor complexity</td>
+                            <td>Unified conversation intelligence platform</td>
+                            <td>Consolidated insights and simplified vendor management</td>
+                        </tr>
+                        <tr>
+                            <td>Limited email reply sentiment analysis</td>
+                            <td>Cannot differentiate positive vs negative responses</td>
+                            <td>Advanced sentiment analysis with objection categorization</td>
+                            <td>Data-driven messaging optimization</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="team-quotes" class="section">
+                <h2>What the Team is Saying</h2>
+                
+                <div class="quote-section">
+                    <div class="quote">"We're drowning. Right now I'm looking at like 400 tasks for today."</div>
+                    <div class="quote-author">— Brooke Zin, SDR</div>
+                </div>
+                
+                <div class="quote-section">
+                    <div class="quote">"That'll make our content marketer very happy - being able to A/B test with dynamic sequences."</div>
+                    <div class="quote-author">— Kari Kernen, SDR Manager</div>
+                </div>
+                
+                <div class="quote-section">
+                    <div class="quote">"I prefer outcomes over tools."</div>
+                    <div class="quote-author">— Kody Thomas, VP Marketing</div>
+                </div>
+                
+                <div class="quote-section">
+                    <div class="quote">"The meeting aspect is a little smoother [than HubSpot]. Similar but a little smoother."</div>
+                    <div class="quote-author">— Kari Kernen, SDR Manager (after seeing Outreach demo)</div>
+                </div>
+                
+                <div class="quote-section">
+                    <div class="quote">"A lot more detailed, a lot more granular than what we can currently get [in reporting]."</div>
+                    <div class="quote-author">— Kari Kernen, SDR Manager</div>
+                </div>
+            </section>
+
+            <section id="financial-analysis" class="section section-alt">
+                <h2>Financial Analysis</h2>
+                
+                <h3>Investment Framework</h3>
+                <div class="roi-grid">
+                    <div class="roi-card">
+                        <h4>Platform Licensing</h4>
+                        <p><strong>$120-$230</strong> per user/month</p>
+                        <p>Scales based on feature requirements (Engagement + Conversation Intelligence + Advanced Analytics)</p>
+                    </div>
+                    
+                    <div class="roi-card">
+                        <h4>Implementation</h4>
+                        <p><strong>3-4 week timeline</strong></p>
+                        <p>Custom training, workflow consulting, Salesforce integration, platform design</p>
+                    </div>
+                    
+                    <div class="roi-card">
+                        <h4>Team Size</h4>
+                        <p><strong>25-30 users</strong></p>
+                        <p>Sales, marketing, and customer success teams</p>
+                    </div>
+                </div>
+                
+                <h3>ROI Methodology</h3>
+                <div class="card">
+                    <h4>Productivity Gains</h4>
+                    <p><strong>Time Savings:</strong> 30-45 minutes daily per SDR through automated task management and prioritization</p>
+                    <p><strong>Efficiency Improvement:</strong> 15-25% sequence conversion rate improvement through A/B testing and optimization</p>
+                    <p><strong>Automation Benefits:</strong> Reduced manual processes across 20-30 concurrent sales initiatives</p>
+                </div>
+                
+                <div class="card">
+                    <h4>Strategic Value</h4>
+                    <p><strong>Tool Consolidation:</strong> Unified platform eliminates separate conversation intelligence evaluation and vendor management complexity</p>
+                    <p><strong>Scalability Foundation:</strong> Enterprise-grade automation supports growth without proportional headcount increases</p>
+                    <p><strong>Data-Driven Optimization:</strong> Advanced reporting enables continuous performance improvement across all sales activities</p>
+                </div>
+            </section>
+
+            <section id="implementation" class="section">
+                <h2>Implementation Framework</h2>
+                <div class="implementation-timeline">
+                    <div class="phase">
+                        <div class="phase-number">1</div>
+                        <div>
+                            <strong>Week 1: Platform Setup & Integration</strong>
+                            <p>Salesforce integration configuration, user provisioning, basic workflow setup</p>
+                        </div>
+                    </div>
+                    
+                    <div class="phase">
+                        <div class="phase-number">2</div>
+                        <div>
+                            <strong>Week 2: Workflow Migration & Training</strong>
+                            <p>Sequence migration, automation setup, initial user training sessions</p>
+                        </div>
+                    </div>
+                    
+                    <div class="phase">
+                        <div class="phase-number">3</div>
+                        <div>
+                            <strong>Week 3: Advanced Configuration & Testing</strong>
+                            <p>Complex triggers, conversation intelligence setup, performance testing</p>
+                        </div>
+                    </div>
+                    
+                    <div class="phase">
+                        <div class="phase-number">4</div>
+                        <div>
+                            <strong>Week 4: Go-Live & Optimization</strong>
+                            <p>Production launch, user adoption support, initial performance optimization</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="stakeholder-alignment" class="section section-alt">
+                <h2>Stakeholder Alignment</h2>
+                <div class="stakeholder-grid">
+                    <div class="stakeholder-card">
+                        <div class="stakeholder-name">Kody Thomas</div>
+                        <div class="stakeholder-role">VP Marketing (Decision Maker)</div>
+                        <p>Focused on outcomes over tools, budget authority, negotiation-oriented, interested in conversation intelligence consolidation</p>
+                    </div>
+                    
+                    <div class="stakeholder-card">
+                        <div class="stakeholder-name">Kari Kernen</div>
+                        <div class="stakeholder-role">SDR Manager (Power User)</div>
+                        <p>Daily workflow management, sequence optimization needs, coaching visibility requirements, LinkedIn integration priority</p>
+                    </div>
+                    
+                    <div class="stakeholder-card">
+                        <div class="stakeholder-name">Elyssa Douglass</div>
+                        <div class="stakeholder-role">Sales Enablement (Implementation Lead)</div>
+                        <p>Process optimization focus, accessibility requirements, implementation timeline coordination</p>
+                    </div>
+                    
+                    <div class="stakeholder-card">
+                        <div class="stakeholder-name">Alina Castro</div>
+                        <div class="stakeholder-role">Sales Operations Analyst</div>
+                        <p>Technical integration requirements, Salesforce connectivity, data management oversight</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="supporting-materials" class="section">
+                <h2>Supporting Materials</h2>
+                <div class="card">
+                    <h4>Recorded Demonstrations & Conversations</h4>
                     <ul>
-                        <li>SDR team managing 200-400 daily tasks with manual prioritization</li>
-                        <li>30-45 minutes daily per rep on administrative task management</li>
-                        <li>AE team underutilized in prospecting due to deliverability concerns</li>
-                        <li>Content optimization limited by either/or choice between A/B testing and automation</li>
-                    </ul>
-                </div>
-                
-                <div class="impact-card target-state">
-                    <h3>Scalability Constraints</h3>
-                    <ul>
-                        <li>Current platform limits automation sophistication for 20-30 concurrent initiatives</li>
-                        <li>Manual workarounds prevent operations team from strategic focus</li>
-                        <li>Tool sprawl evaluation increases complexity and vendor management overhead</li>
-                        <li>Limited reporting granularity reduces data-driven decision making</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="metric-card">
-                <div class="metric-number">25%</div>
-                <div class="metric-label">Estimated productivity gain from automated task prioritization and workflow optimization</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Target State: Outreach-Enabled Operations</h2>
-            
-            <h3>Transformed Workflows</h3>
-            
-            <div class="workflow-grid">
-                <div class="workflow-card">
-                    <h4>Enhanced Sequence Management</h4>
-                    <p><strong>Outreach Solution:</strong> A/B testing WITH dynamic sequences enables content optimization while maintaining engagement-based automation.</p>
-                    <p><strong>Expected Outcome:</strong> 15-25% improvement in sequence conversion rates through systematic message testing and optimization.</p>
-                </div>
-                
-                <div class="workflow-card">
-                    <h4>Intelligent Task Execution</h4>
-                    <p><strong>Outreach Solution:</strong> Smart prioritization, automated routing, and bulk task management across multiple campaigns and sequences.</p>
-                    <p><strong>Expected Outcome:</strong> Reduce daily administrative time by 30-45 minutes per SDR, increase prospect engagement capacity.</p>
-                </div>
-                
-                <div class="workflow-card">
-                    <h4>Advanced Workflow Automation</h4>
-                    <p><strong>Outreach Solution:</strong> Enterprise-grade Salesforce integration with complex triggers and branching logic, backed by Salesforce's strategic investment.</p>
-                    <p><strong>Expected Outcome:</strong> Sophisticated automation supporting 20-30 initiatives with minimal manual oversight.</p>
-                </div>
-                
-                <div class="workflow-card">
-                    <h4>Systematic Coaching & Analytics</h4>
-                    <p><strong>Outreach Solution:</strong> Integrated conversation intelligence with coaching workflows, performance tracking, and message effectiveness analysis.</p>
-                    <p><strong>Expected Outcome:</strong> Consistent coaching processes, improved rep performance, scalable best practice implementation.</p>
-                </div>
-            </div>
-            
-            <h3>Core Platform Capabilities</h3>
-            
-            <div class="card">
-                <h4>Engagement Platform (Foundation)</h4>
-                <p>Multi-channel sequences, CRM synchronization, integrated dialer, email automation, advanced reporting, and governance controls. Essential foundation for replacing HubSpot capabilities with enterprise-grade functionality.</p>
-            </div>
-            
-            <div class="card">
-                <h4>Conversation Intelligence</h4>
-                <p>Real-time transcription, coaching workflows, sentiment analysis, topic tracking, and performance analytics. Consolidates separate Gong evaluation into unified platform approach.</p>
-            </div>
-            
-            <div class="card">
-                <h4>Advanced Analytics & Reporting</h4>
-                <p>Email sentiment analysis, sequence comparison, clickable reporting with drill-down capabilities, revenue attribution, and performance optimization recommendations.</p>
-            </div>
-        </div>
-
-        <div class="section section-alt">
-            <h2>Solution Mapping</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Business Challenge</th>
-                        <th>Current Impact</th>
-                        <th>Outreach Solution</th>
-                        <th>Expected Outcome</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Cannot A/B test with dynamic sequences</td>
-                        <td>Limited content optimization</td>
-                        <td>A/B testing WITH dynamic functionality</td>
-                        <td>15-25% improvement in conversion rates</td>
-                    </tr>
-                    <tr>
-                        <td>Manual task prioritization across 200-400 daily tasks</td>
-                        <td>30-45 minutes daily administrative overhead</td>
-                        <td>Intelligent task routing and bulk management</td>
-                        <td>Increased prospect engagement capacity</td>
-                    </tr>
-                    <tr>
-                        <td>Limited CRM connectivity and automation</td>
-                        <td>Manual processes for complex sales motions</td>
-                        <td>Enterprise Salesforce integration with advanced triggers</td>
-                        <td>Sophisticated automation with minimal oversight</td>
-                    </tr>
-                    <tr>
-                        <td>Fireflies recordings not systematically leveraged</td>
-                        <td>Missed coaching opportunities</td>
-                        <td>Integrated conversation intelligence and coaching workflows</td>
-                        <td>Consistent performance optimization</td>
-                    </tr>
-                    <tr>
-                        <td>Tool sprawl from separate Gong evaluation</td>
-                        <td>Disconnected insights and vendor complexity</td>
-                        <td>Unified conversation intelligence platform</td>
-                        <td>Consolidated insights and simplified vendor management</td>
-                    </tr>
-                    <tr>
-                        <td>Limited email reply sentiment analysis</td>
-                        <td>Cannot differentiate positive vs negative responses</td>
-                        <td>Advanced sentiment analysis with objection categorization</td>
-                        <td>Data-driven messaging optimization</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="section">
-            <h2>What the Team is Saying</h2>
-            
-            <div class="quote-section">
-                <div class="quote">"We're drowning. Right now I'm looking at like 400 tasks for today."</div>
-                <div class="quote-author">— Brooke Zin, SDR</div>
-            </div>
-            
-            <div class="quote-section">
-                <div class="quote">"That'll make our content marketer very happy - being able to A/B test with dynamic sequences."</div>
-                <div class="quote-author">— Kari Kernen, SDR Manager</div>
-            </div>
-            
-            <div class="quote-section">
-                <div class="quote">"I prefer outcomes over tools."</div>
-                <div class="quote-author">— Kody Thomas, VP Marketing</div>
-            </div>
-            
-            <div class="quote-section">
-                <div class="quote">"The meeting aspect is a little smoother [than HubSpot]. Similar but a little smoother."</div>
-                <div class="quote-author">— Kari Kernen, SDR Manager (after seeing Outreach demo)</div>
-            </div>
-            
-            <div class="quote-section">
-                <div class="quote">"A lot more detailed, a lot more granular than what we can currently get [in reporting]."</div>
-                <div class="quote-author">— Kari Kernen, SDR Manager</div>
-            </div>
-        </div>
-
-        <div class="section section-alt">
-            <h2>Financial Analysis</h2>
-            
-            <h3>Investment Framework</h3>
-            <div class="roi-grid">
-                <div class="roi-card">
-                    <h4>Platform Licensing</h4>
-                    <p><strong>$120-$230</strong> per user/month</p>
-                    <p>Scales based on feature requirements (Engagement + Conversation Intelligence + Advanced Analytics)</p>
-                </div>
-                
-                <div class="roi-card">
-                    <h4>Implementation</h4>
-                    <p><strong>3-4 week timeline</strong></p>
-                    <p>Custom training, workflow consulting, Salesforce integration, platform design</p>
-                </div>
-                
-                <div class="roi-card">
-                    <h4>Team Size</h4>
-                    <p><strong>25-30 users</strong></p>
-                    <p>Sales, marketing, and customer success teams</p>
-                </div>
-            </div>
-            
-            <h3>ROI Methodology</h3>
-            <div class="card">
-                <h4>Productivity Gains</h4>
-                <p><strong>Time Savings:</strong> 30-45 minutes daily per SDR through automated task management and prioritization</p>
-                <p><strong>Efficiency Improvement:</strong> 15-25% sequence conversion rate improvement through A/B testing and optimization</p>
-                <p><strong>Automation Benefits:</strong> Reduced manual processes across 20-30 concurrent sales initiatives</p>
-            </div>
-            
-            <div class="card">
-                <h4>Strategic Value</h4>
-                <p><strong>Tool Consolidation:</strong> Unified platform eliminates separate conversation intelligence evaluation and vendor management complexity</p>
-                <p><strong>Scalability Foundation:</strong> Enterprise-grade automation supports growth without proportional headcount increases</p>
-                <p><strong>Data-Driven Optimization:</strong> Advanced reporting enables continuous performance improvement across all sales activities</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Implementation Framework</h2>
-            <div class="implementation-timeline">
-                <div class="phase">
-                    <div class="phase-number">1</div>
-                    <div>
-                        <strong>Week 1: Platform Setup & Integration</strong>
-                        <p>Salesforce integration configuration, user provisioning, basic workflow setup</p>
-                    </div>
-                </div>
-                
-                <div class="phase">
-                    <div class="phase-number">2</div>
-                    <div>
-                        <strong>Week 2: Workflow Migration & Training</strong>
-                        <p>Sequence migration, automation setup, initial user training sessions</p>
-                    </div>
-                </div>
-                
-                <div class="phase">
-                    <div class="phase-number">3</div>
-                    <div>
-                        <strong>Week 3: Advanced Configuration & Testing</strong>
-                        <p>Complex triggers, conversation intelligence setup, performance testing</p>
-                    </div>
-                </div>
-                
-                <div class="phase">
-                    <div class="phase-number">4</div>
-                    <div>
-                        <strong>Week 4: Go-Live & Optimization</strong>
-                        <p>Production launch, user adoption support, initial performance optimization</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section section-alt">
-            <h2>Stakeholder Alignment</h2>
-            <div class="stakeholder-grid">
-                <div class="stakeholder-card">
-                    <div class="stakeholder-name">Kody Thomas</div>
-                    <div class="stakeholder-role">VP Marketing (Decision Maker)</div>
-                    <p>Focused on outcomes over tools, budget authority, negotiation-oriented, interested in conversation intelligence consolidation</p>
-                </div>
-                
-                <div class="stakeholder-card">
-                    <div class="stakeholder-name">Kari Kernen</div>
-                    <div class="stakeholder-role">SDR Manager (Power User)</div>
-                    <p>Daily workflow management, sequence optimization needs, coaching visibility requirements, LinkedIn integration priority</p>
-                </div>
-                
-                <div class="stakeholder-card">
-                    <div class="stakeholder-name">Elyssa Douglass</div>
-                    <div class="stakeholder-role">Sales Enablement (Implementation Lead)</div>
-                    <p>Process optimization focus, accessibility requirements, implementation timeline coordination</p>
-                </div>
-                
-                <div class="stakeholder-card">
-                    <div class="stakeholder-name">Alina Castro</div>
-                    <div class="stakeholder-role">Sales Operations Analyst</div>
-                    <p>Technical integration requirements, Salesforce connectivity, data management oversight</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Supporting Materials</h2>
-            <div class="card">
-                <h4>Recorded Demonstrations & Conversations</h4>
-                <ul>
                     <li><strong>Initial Discovery Call:</strong> <a href="https://hello.outreach.io/s/ep5LUp-kXIc" style="color: #5951ff;">Comprehensive evaluation of current state challenges and stakeholder alignment</a></li>
                     <li><strong>Workflow Interview:</strong> <a href="https://hello.outreach.io/s/XtRDPqyDe8c" style="color: #5951ff;">Detailed analysis of SDR and AE processes with Logan, Brooke, and Kari</a></li>
                     <li><strong>Platform Demonstration:</strong> <a href="https://hello.outreach.io/s/IAdNdZSk_Hs" style="color: #5951ff;">Full product walkthrough with Kody, Elyssa, Kari, and Alina covering engagement platform, conversation intelligence, and advanced reporting capabilities</a></li>
-                </ul>
+                    </ul>
+                    
+                    <p><em>All recorded materials available for internal reference and stakeholder review</em></p>
+                </div>
+            </section>
+        </div>
 
-                <p><em>All recorded materials available for internal reference and stakeholder review</em></p>
+        <div class="footer">
+            <div class="container">
+                <p><strong>Strategic Recommendation:</strong> Outreach provides the enterprise-grade sales operations foundation TPGi needs to scale its accessibility-focused mission while consolidating tools and optimizing team productivity.</p>
             </div>
         </div>
     </div>
 
-    <div class="footer">
-        <div class="container">
-            <p><strong>Strategic Recommendation:</strong> Outreach provides the enterprise-grade sales operations foundation TPGi needs to scale its accessibility-focused mission while consolidating tools and optimizing team productivity.</p>
-        </div>
-    </div>
+    <script>
+        // Navigation active state tracking
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        function updateActiveNavLink() {
+            let current = '';
+            const scrollPosition = window.pageYOffset + 100;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', updateActiveNavLink);
+        
+        // Set initial active state
+        updateActiveNavLink();
+
+        // Smooth scroll for navigation clicks (fallback for older browsers)
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
